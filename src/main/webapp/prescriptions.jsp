@@ -3,15 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prescriptions</title>
+    <title>Prescrição</title>
+    <link rel="icon" type="image/icon" href="logo.png">
 </head>
 <body>
-<h1>Your Prescriptions</h1>
+<h1>Sua Prescrições</h1>
 <form action="prescriptions" method="post">
-    <label for="name">Prescription Name:</label>
+    <label for="name">Nome Prescrição:</label>
     <input type="text" id="name" name="name"><br><br>
 
-    <label for="description">Description:</label>
+    <label for="description">Descrição:</label>
     <input type="text" id="description" name="description"><br><br>
 
     <input type="submit" value="Add Prescription">

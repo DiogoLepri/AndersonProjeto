@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Medical Prescription App</title>
+    <link rel="stylesheet" type="text/css" href="Css/inicial.css">
+    <link rel="icon" type="image/icon" href="logo.png">
+    <title>Farmed</title>
 </head>
 <body>
-<h1>Welcome to the Medical Prescription App</h1>
-<p>Please choose one of the following options:</p>
+<h1>Bem vindo ao Farmed</h1>
+<p>Por favor, selecione uma das opções:</p>
 <ul>
     <li><a href="login.jsp">Login</a></li>
-    <li><a href="register.jsp">Register</a></li>
+    <li><a href="register.jsp">Registrar</a></li>
 
 
 </ul>
