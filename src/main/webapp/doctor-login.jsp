@@ -9,18 +9,22 @@
 <body>
 <div class="login-wrapper">
     <div class="login-box">
-        <h2>Login to your account</h2>
-        <!-- Update the action attribute to the URL of your login servlet -->
-        <form action="LoginServlet" method="post">
+        <h2>Faça Login</h2>
+        <form action="login" method="post">
             <div class="input-group">
-                <input type="email" name="email" placeholder="Email" required>
+                <label for="crm">CRM:</label>
+                <input type="text" id="crm" name="crm" placeholder="Enter your CRM" required>
             </div>
             <div class="input-group">
-                <input type="password" name="password" placeholder="Password" required>
-                <a href="#" class="forgot-link">Forgot?</a>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
             </div>
-            <button type="submit" class="login-button">Login now</button>
-            <p class="signup-text">Nao tem uma conta? <a href="register.jsp">Criar conta:</a></p>
+            <button type="submit" class="login-button">Login</button>
+            <!-- Error Message Display -->
+            <% if ("true".equals(request.getParameter("error"))) { %>
+            <p style="color: red;">CRM ou senha inválido. Por favor tente denovo.</p>
+            <% } %>
+            <p class="signup-text">Não tem uma conta? <a href="register.jsp">Sign Up</a></p>
         </form>
     </div>
 </div>

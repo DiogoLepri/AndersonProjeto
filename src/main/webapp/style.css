@@ -19,6 +19,8 @@ body, html {
     align-items: center; /* Centers content vertically */
     color: white; /* Text color set to white */
     text-align: center; /* Centers text */
+    height: 50%;
+    width: 50%;
 }
 
 /* Specific styling for the doctor section */

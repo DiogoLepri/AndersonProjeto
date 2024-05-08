@@ -11,14 +11,14 @@
 <div class="container">
     <div class="half doctor" onclick="window.location.href='doctor-login.jsp';">
         <div class="content">
-            <h1>Doctor Login</h1>
-            <p>Welcome. Start your journey now with our system!</p>
+            <h1>Medico Login</h1>
+            <p>Bem-vindo a Farmed, o seu sistema amigo.</p>
         </div>
     </div>
     <div class="half patient" onclick="window.location.href='/patient-login';">
         <div class="content">
-            <h1>Patient Login</h1>
-            <p>Access your medical records and more.</p>
+            <h1>Login Paciente</h1>
+            <p>Accese seus histórico medico.</p>
         </div>
     </div>
 </div>

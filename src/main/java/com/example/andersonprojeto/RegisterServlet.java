@@ -15,10 +15,12 @@ public class RegisterServlet extends HttpServlet {
 
         if (!userStorage.addUser(crm, password)) {
             request.setAttribute("errorMessage", "User already exists. Try a different CRM.");
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+            request.getRequestDispatcher("/register.jsp").forward(request, response); // Just "/register.jsp" if it's at the root
         } else {
-            response.sendRedirect("doctor-login.jsp");
+            response.sendRedirect("doctor-login.jsp"); // No need to prepend context path if redirecting to a resource in the same context
         }
+
     }
+
 }
 
