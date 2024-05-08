@@ -1,0 +1,73 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.split-screen {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    flex: 1;
+    background-color: #003366; /* Dark blue background */
+    color: white;
+    padding: 2rem;
+    text-align: left;
+}
+
+.right {
+    flex: 1;
+    background-color: #f5f5f5; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fixed width for the form */
+    flex-direction: column;
+}
+
+h1, p, label, input, button, a {
+    margin-bottom: 1rem;
+}
+
+input, button {
+    width: 100%; /* Full width of the form */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px #4CAF50;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

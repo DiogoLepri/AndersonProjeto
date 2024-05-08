@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="Css/style.css">
-    <link rel="icon" type="image/icon" href="logo.png">
+    <title>Farmed</title>
+
+    <link rel="icon" type="image/png"  href="favicon.png">
 </head>
 <body>
 <form action="login" method="post">

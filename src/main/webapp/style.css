@@ -1,0 +1,48 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Uses Arial font */
+}
+
+/* Container to hold both halves */
+.container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Styling for both halves */
+.half {
+    flex: 1; /* Each half takes equal space */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    color: white; /* Text color set to white */
+    text-align: center; /* Centers text */
+}
+
+/* Specific styling for the doctor section */
+.doctor {
+    background-color: #003366; /* Dark blue background */
+}
+
+/* Specific styling for the patient section */
+.patient {
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark text color for visibility on light background */
+}
+
+/* Styling for the content inside each half */
+.content {
+    padding: 20px;
+}
+
+/* Headings sized for visibility */
+h1 {
+    font-size: 2em; /* 2 times the default size */
+}
+
+/* Paragraph styling for additional text */
+p {
+    font-size: 1.2em; /* Slightly larger text for readability */
+}

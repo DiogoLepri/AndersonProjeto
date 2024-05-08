@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prescrição</title>
-    <link rel="icon" type="image/icon" href="logo.png">
+    <title>Farmed</title>
+    <link rel="icon" type="image/png"  href="favicon.png">
 </head>
 <body>
 <h1>Sua Prescrições</h1>

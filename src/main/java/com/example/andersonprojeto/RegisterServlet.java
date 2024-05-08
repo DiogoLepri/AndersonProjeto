@@ -11,14 +11,14 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String crm = request.getParameter("crm");
         String password = request.getParameter("password");
-
         UserStorage userStorage = UserStorage.getInstance();
 
         if (!userStorage.addUser(crm, password)) {
-            response.getWriter().println("User already exists. Try a different CRM.");
+            request.setAttribute("errorMessage", "User already exists. Try a different CRM.");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         } else {
-            response.getWriter().println("Registration successful. Redirecting to login...");
-            response.setHeader("Refresh", "3; URL=login.jsp");
+            response.sendRedirect("doctor-login.jsp");
         }
     }
 }
+

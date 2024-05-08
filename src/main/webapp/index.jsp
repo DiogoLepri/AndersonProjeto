@@ -1,19 +1,26 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="Css/inicial.css">
-    <link rel="icon" type="image/icon" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmed</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png"  href="favicon.png">
 </head>
 <body>
-<h1>Bem vindo ao Farmed</h1>
-<p>Por favor, selecione uma das opções:</p>
-<ul>
-    <li><a href="login.jsp">Login</a></li>
-    <li><a href="register.jsp">Registrar</a></li>
-
-
-</ul>
+<div class="container">
+    <div class="half doctor" onclick="window.location.href='doctor-login.jsp';">
+        <div class="content">
+            <h1>Doctor Login</h1>
+            <p>Welcome. Start your journey now with our system!</p>
+        </div>
+    </div>
+    <div class="half patient" onclick="window.location.href='/patient-login';">
+        <div class="content">
+            <h1>Patient Login</h1>
+            <p>Access your medical records and more.</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
