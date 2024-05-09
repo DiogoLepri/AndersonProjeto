@@ -26,11 +26,9 @@ body, html {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    flex-direction: column; /* Aligns items vertically */
 }
 
-h2{
-
-}
 form {
     background-color: #ffffff; /* White background for the form */
     padding: 2rem;
@@ -64,6 +62,7 @@ button {
 
 button:hover {
     background-color: #01ffef;
+    color:#003366;
 }
 
 a {

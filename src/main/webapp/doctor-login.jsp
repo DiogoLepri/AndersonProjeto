@@ -19,11 +19,11 @@
                 <form action="login" method="post">
                     <div class="input-group">
                         <label for="crm">CRM:</label>
-                        <input type="text" id="crm" name="crm" placeholder="Enter your CRM" required>
+                        <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
                     </div>
                     <div class="input-group">
                         <label for="password">Senha:</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                     </div>
                     <button type="submit" class="login-button">Login</button>
                     <% if ("true".equals(request.getParameter("error"))) { %>

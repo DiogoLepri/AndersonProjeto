@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +13,18 @@
         <h1>Bem-vindo a Farmed</h1>
     </div>
     <div class="right">
-        <h2>Faca Login</h2>
-        <form action="register" method="post">
-            <label for="crm">CRM:</label>
-            <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-            <button type="submit">Criar conta</button>
-        <p>Ja tem uma conta? <a href="doctor-login.jsp">Log In</a></p>
-        </form>
+        <div class="content-wrapper"> <!-- New wrapper for centering content -->
+            <h2>Faca Cadastro</h2>
+            <form action="register" method="post">
+                <label for="crm" style="text-align:start">CRM:</label>
+                <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                <button type="submit">Criar conta</button>
+                <p>Ja tem uma conta? <a href="doctor-login.jsp">Log In</a></p>
+            </form>
+        </div>
     </div>
 </div>
 </body>
 </html>
-
