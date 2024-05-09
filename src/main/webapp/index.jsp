@@ -19,13 +19,11 @@
     <div class="half doctor" onclick="window.location.href='doctor-login.jsp';">
         <div class="content">
             <h1>Medico Login</h1>
-            <p>Bem-vindo a Farmed, o seu sistema amigo.</p>
         </div>
     </div>
     <div class="half patient" onclick="window.location.href='/patient-login';">
         <div class="content">
-            <h1>Login Paciente</h1>
-            <p>Accese seus historico medico.</p>
+            <h1>Login Farmaceutico</h1>
         </div>
     </div>
 </div>

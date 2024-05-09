@@ -1,71 +1,73 @@
-/* login.css */
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #2c3e50; /* Dark background color */
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Prevents scrolling */
 }
 
-.login-wrapper {
+.split-screen {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
-.login-box {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    width: 350px; /* Adjusted for better alignment with your screenshot */
-    text-align: center;
+.left {
+    flex: 1;
+    background-color: #003366; /* Dark blue background */
+    color: white;
+    padding: 2rem;
+    text-align: left;
 }
 
-.input-group {
-    margin-bottom: 20px; /* Adjust spacing as necessary */
-    position: relative;
+.right {
+    flex: 1;
+    background-color: #f5f5f5; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
 
-input[type="email"], input[type="password"], input[type="text"] { /* Adjusted to include input[type="text"] */
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
+form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fixed width for the form */
+    flex-direction: column;
+}
+
+h1, p, label, input, button, a {
+    margin-bottom: 1rem;
+}
+
+input, button {
+    width: 100%; /* Full width of the form */
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.forgot-link {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    color: #3498db;
-    text-decoration: none;
-    font-size: 0.9em; /* Make the font size smaller if needed */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px #4CAF50;
 }
 
-.login-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #3498db;
+button {
+    background-color: #4CAF50;
     color: white;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
 }
 
-.login-button:hover {
-    background-color: #2980b9;
+button:hover {
+    background-color: #45a049;
 }
 
-.signup-text {
-    font-size: 0.9em;
-    margin-top: 20px;
-}
-
-.signup-text a {
-    color: #3498db;
+a {
+    color: #4CAF50;
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

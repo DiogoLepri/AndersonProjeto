@@ -54,9 +54,32 @@ body, html {
 
 /* Specific styling for the doctor section */
 .doctor {
-    background-color: dimgray ;
+    position: relative;
     height: 100%;
+    background-image: url(doctor.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+.doctor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 19, 90, 0.5); /* Dark overlay normally */
+    transition: background-color 0.3s ease; /* Smooth transition for the color change */
+    pointer-events: none;
+    border-radius:20px;
+}
+
+.doctor:hover::before {
+    background-color: rgba(34, 41, 81, 0.3); /* Lighter overlay on hover */
+    border-radius:20px;
+}
+
 
 /* Specific styling for the patient section */
 .patient {
