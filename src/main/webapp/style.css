@@ -2,41 +2,66 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif; /* Uses Arial font */
+    font-family: "Bahnschrift", "Helvetica Neue", "Helvetica", sans, serif;
+    background-color: #ffffff; /* Consistent dark background color */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+}
+.Titulo {
+    position: relative;  /* Ensure the .Titulo div is relative for positioning context */
+    text-align: center;  /* Center-aligns the text elements */
 }
 
+.Titulo img {
+    position: absolute;
+    top: -120px;  /* Move the image up by 20 pixels above the top edge */
+    left: 50%;  /* Set left edge of image to the center of the container */
+    transform: translateX(-50%);  /* Shift image back by half its own width to center it */
+    width: 100%;
+    height: auto;
+}
+
+#SubTitulo {
+    font-size: 18px;
+    color: #777; /* Even lighter for less emphasis */
+    margin-top: 1px; /* Keeps elements close together */
+    text-align: center;
+    font-family: "Bahnschrift", "Helvetica Neue", "Helvetica", sans, serif;
+}
 /* Container to hold both halves */
 .container {
     display: flex;
-    height: 100vh; /* Full height of the viewport */
+    justify-content: space-around; /* Adjusts items with space around them */
+    align-items: center;
+    height: 70vh; /* Adjust height as needed */
+    width: 100%; /* Ensure the container fills an adequate part of the screen */
 }
 
 /* Styling for both halves */
 .half {
-    flex: 1; /* Each half takes equal space */
+    flex: 1; /* Allows each half to grow */
     display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    color: white; /* Text color set to white */
-    text-align: center; /* Centers text */
-    height: 50%;
-    width: 50%;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 20px; /* Adds a gap between the two halves */
+    padding: 20px; /* Padding for internal content */
 }
 
 /* Specific styling for the doctor section */
 .doctor {
-    background-color: #003366; /* Dark blue background */
+    background-color: dimgray ;
+    height: 100%;
 }
 
 /* Specific styling for the patient section */
 .patient {
-    background-color: #ffffff; /* White background */
-    color: #333333; /* Dark text color for visibility on light background */
-}
-
-/* Styling for the content inside each half */
-.content {
-    padding: 20px;
+    background-color: dimgray ;
+    height: 100%;
 }
 
 /* Headings sized for visibility */
