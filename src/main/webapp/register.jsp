@@ -11,17 +11,17 @@
 <body>
 <div class="split-screen">
     <div class="left">
-        <h1>BALA. Welcome.</h1>
-        <p>Start your journey now with our management system!</p>
+        <h1>Bem-vindo a Farmed</h1>
     </div>
     <div class="right">
+        <h2>Faca Login</h2>
         <form action="register" method="post">
-            <label for="crm">CRM Number</label>
-            <input type="text" id="crm" name="crm" required>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Create account</button>
-        <p>Already Have An Account? <a href="doctor-login.jsp">Log In</a></p>
+            <label for="crm">CRM:</label>
+            <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            <button type="submit">Criar conta</button>
+        <p>Ja tem uma conta? <a href="doctor-login.jsp">Log In</a></p>
         </form>
     </div>
 </div>

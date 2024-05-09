@@ -28,6 +28,9 @@ body, html {
     padding: 2rem;
 }
 
+h2{
+
+}
 form {
     background-color: #ffffff; /* White background for the form */
     padding: 2rem;
@@ -50,21 +53,21 @@ input, button {
 
 input:focus, button:focus {
     outline: none;
-    box-shadow: 0 0 2px 1px #4CAF50;
+    box-shadow: 0 0 2px 1px #01ffef;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #003366;
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #01ffef;
 }
 
 a {
-    color: #4CAF50;
+    color: #003366;
     text-decoration: none;
 }
 
