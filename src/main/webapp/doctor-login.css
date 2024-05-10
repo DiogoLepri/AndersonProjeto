@@ -1,3 +1,4 @@
+/* General layout settings for the page */
 body, html {
     height: 100%;
     margin: 0;
@@ -6,11 +7,13 @@ body, html {
     overflow: hidden; /* Prevents scrolling */
 }
 
+/* Styling for the split-screen layout */
 .split-screen {
     display: flex;
     height: 100vh;
 }
 
+/* Styling for the left section */
 .left {
     flex: 1;
     background-color: #003366; /* Dark blue background */
@@ -18,13 +21,19 @@ body, html {
     padding: 2rem;
     text-align: center;
 }
+.left h1{
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 35%;
+    font-size: xxx-large;
+}
 .left img{
-    width: 70%;
+    width: 100%;
     height: auto;
-    margin-left: 2rem;
-    margin-top: 8rem;
+    margin-top: 10%;
 }
 
+/* Styling for the right section where the form is placed */
 .right {
     flex: 1;
     background-color: #f5f5f5; /* Light gray background */
@@ -32,55 +41,61 @@ body, html {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    flex-direction: column;
+    flex-direction: column; /* Aligns items vertically */
 }
 
-form {
-    background-color: #ffffff; /* White background for the form */
+/* Styling for the form specifically */
+.login-form {
+    display: flex; /* Ensures flex properties are applied */
+    flex-direction: column;
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    width: 300px; /* Fixed width for the form */
-    flex-direction: column;
+    width: 300px;
 }
 
-h1, p, label, input, button, a {
-    margin-bottom: 1rem;
-}
-
+/* Uniform styling for all inputs and buttons */
 input, button {
-    width: 100%; /* Full width of the form */
+    width: 100%;
+    margin: 5px 0; /* Adds margin to top and bottom for spacing */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
 input:focus, button:focus {
     outline: none;
     box-shadow: 0 0 2px 1px #01ffef;
 }
 
+/* Specific styling for buttons */
 button {
-    background-color: #003366;
+    background-color: #003366; /* Dark blue, for consistency */
     color: white;
     cursor: pointer;
 }
 
+/* Hover effects for buttons to improve interactivity */
 button:hover {
-    background-color: #01ffef;
+    background-color: #01ffef; /* Light blue on hover */
     color: #003366;
 }
 
+/* Styling for error messages to make them stand out */
+.error-message {
+    color: red;
+}
+/* Link styling for consistency with theme colors */
 a {
     color: #003366;
     text-decoration: none;
 }
 
+/* Hover effect for links */
 a:hover {
     text-decoration: underline;
 }
-
-.login-box h2{
+.login-box h2 {
     text-align: center;
     color: #003366;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);

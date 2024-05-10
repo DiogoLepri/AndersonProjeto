@@ -20,12 +20,14 @@ body, html {
 }
 .left h1{
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 35%;
+    font-size: xxx-large;
 }
 .left img{
-    width: 70%;
+    width: 100%;
     height: auto;
-    margin-left: 2rem;
-    margin-top: 8rem;
+    margin-top: 10%;
 }
 
 .right {
@@ -39,20 +41,18 @@ body, html {
 }
 
 form {
-    background-color: #ffffff; /* White background for the form */
+    display: flex; /* Ensures flex properties are applied */
+    flex-direction: column;
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    width: 300px; /* Fixed width for the form */
-    flex-direction: column;
+    width: 300px;
 }
 
-h1, p, label, input, button, a {
-    margin-bottom: 1rem;
-}
 
 input, button {
-    width: 100%; /* Full width of the form */
+    margin: 5px 0; /* Adds margin to top and bottom for spacing */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;

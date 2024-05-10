@@ -18,7 +18,7 @@
         <div class="login-wrapper">
             <div class="login-box">
                 <h2>Faca Login</h2>
-                <form action="login" method="post">
+                <form action="login" method="post" class="login-form">
                     <div class="input-group">
                         <label for="crm">CRM:</label>
                         <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
@@ -29,13 +29,14 @@
                     </div>
                     <button type="submit" class="login-button">Login</button>
                     <% if ("true".equals(request.getParameter("error"))) { %>
-                    <p style="color: red;">CRM ou senha invalido. Por favor tente novamente.</p>
+                    <p class="error-message" aria-live="polite">CRM ou senha invalido. Por favor tente novamente.</p>
                     <% } %>
                     <p class="signup-text">Nao tem uma conta? <a href="register.jsp">Sign Up</a></p>
                 </form>
             </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>
