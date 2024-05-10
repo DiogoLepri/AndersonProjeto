@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmed</title>
     <link rel="icon" type="image/png"  href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="doctor-login.css">
 </head>
 <body>
 <div class="split-screen">
     <div class="left">
-        <h1>Bem-vindo a Farmed</h1>
+        <h1>Bem-vindo</h1>
+        <img src="logo.png">
     </div>
     <div class="right">
         <div class="login-wrapper">
@@ -27,7 +29,7 @@
                     </div>
                     <button type="submit" class="login-button">Login</button>
                     <% if ("true".equals(request.getParameter("error"))) { %>
-                    <p style="color: red;">CRM ou senha invalido. Por favor tente denovo.</p>
+                    <p style="color: red;">CRM ou senha invalido. Por favor tente novamente.</p>
                     <% } %>
                     <p class="signup-text">Nao tem uma conta? <a href="register.jsp">Sign Up</a></p>
                 </form>

@@ -56,7 +56,7 @@ body, html {
 .doctor {
     position: relative;
     height: 100%;
-    background-image: url(doctor.jpg);
+    background-image: url(doctor1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -71,14 +71,26 @@ body, html {
     bottom: 0;
     background-color: rgba(6, 19, 90, 0.5); /* Dark overlay normally */
     transition: background-color 0.3s ease; /* Smooth transition for the color change */
-    pointer-events: none;
-    border-radius:20px;
+    pointer-events: none; /* Ensures that clicks "pass through" the overlay */
+    z-index: 1; /* Ensures overlay is above the background but below content */
+    border-radius: 20px;
 }
 
 .doctor:hover::before {
     background-color: rgba(34, 41, 81, 0.3); /* Lighter overlay on hover */
-    border-radius:20px;
+    border-radius: 20px;
 }
+
+.content {
+    position: relative; /* Necessary to establish a stacking context */
+    z-index: 2; /* Higher than the overlay to keep text visible */
+}
+
+.content h1 {
+    color: white; /* Example color, adjust as necessary */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Optional: Enhances readability over backgrounds */
+}
+
 
 
 /* Specific styling for the patient section */
@@ -87,12 +99,44 @@ body, html {
     height: 100%;
 }
 
+
 /* Headings sized for visibility */
 h1 {
     font-size: 2em; /* 2 times the default size */
+    font-style: initial;
+    color: white;
 }
 
 /* Paragraph styling for additional text */
 p {
     font-size: 1.2em; /* Slightly larger text for readability */
 }
+
+.patient {
+    position: relative;
+    height: 100%;
+    background-image: url(pharmacy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.patient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 19, 90, 0.5); /* Dark overlay normally */
+    transition: background-color 0.3s ease; /* Smooth transition for the color change */
+    pointer-events: none;
+    border-radius:20px;
+}
+
+.patient:hover::before {
+    background-color: rgba(34, 41, 81, 0.3); /* Lighter overlay on hover */
+    border-radius:20px;
+}
+

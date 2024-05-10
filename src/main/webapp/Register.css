@@ -16,7 +16,16 @@ body, html {
     background-color: #003366; /* Dark blue background */
     color: white;
     padding: 2rem;
-    text-align: left;
+    text-align: center;
+}
+.left h1{
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+.left img{
+    width: 70%;
+    height: auto;
+    margin-left: 2rem;
+    margin-top: 8rem;
 }
 
 .right {
@@ -33,7 +42,7 @@ form {
     background-color: #ffffff; /* White background for the form */
     padding: 2rem;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     width: 300px; /* Fixed width for the form */
     flex-direction: column;
 }
@@ -72,4 +81,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+.content-wrapper h2{
+    text-align: center;
+    color: #003366;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'JetBrains Mono', Arial, sans-serif;
 }
