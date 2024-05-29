@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmed</title>
     <link rel="icon" type="image/png"  href="farmed_icone.png" >
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="doctor-login.css">
+    <link rel="stylesheet" href="farmaceutico-login.css">
 </head>
 <body>
 <div class="split-screen">
@@ -19,10 +19,10 @@
         <div class="login-wrapper">
             <div class="login-box">
                 <h2>Faca Login</h2>
-                <form action="login" method="post" class="login-form">
+                <form action="loginPh" method="post" class="login-form">
                     <div class="input-group">
-                        <label for="crm">CRM:</label>
-                        <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="Digite seu cpf" required>
                     </div>
                     <div class="input-group">
                         <label for="password">Senha:</label>
@@ -30,9 +30,9 @@
                     </div>
                     <button type="submit" class="login-button">Login</button>
                     <% if ("true".equals(request.getParameter("error"))) { %>
-                    <p class="error-message" aria-live="polite">CRM ou senha invalida. Por favor tente novamente.</p>
+                    <p class="error-message" aria-live="polite">CPF ou senha invalida. Por favor tente novamente.</p>
                     <% } %>
-                    <p class="signup-text">Nao tem uma conta? <a href="register.jsp">Sign Up</a></p>
+                    <p class="signup-text">Nao tem uma conta? <a href="farmaceutico-register.jsp">Sign Up</a></p>
                 </form>
             </div>
         </div>

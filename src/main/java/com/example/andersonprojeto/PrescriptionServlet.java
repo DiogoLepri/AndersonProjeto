@@ -17,7 +17,6 @@ public class PrescriptionServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         prescriptions = new ArrayList<>();
-
     }
 
     @Override
@@ -31,8 +30,23 @@ public class PrescriptionServlet extends HttpServlet {
             throws ServletException, IOException {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
+        String cpf = request.getParameter("cpf");
+        String borndate = request.getParameter("borndate");
+        String healthinsurance = request.getParameter("healthinsurance");
+        String doctorname = request.getParameter("doctorname");
+        String crm = request.getParameter("CRM");
+        String medicinename = request.getParameter("medicinename");
+        String dosage = request.getParameter("dosage");
+        String amount = request.getParameter("amount");
+        String admin = request.getParameter("Admin");
+        String obs = request.getParameter("obs");
+
         if (name != null && !name.isEmpty() && description != null && !description.isEmpty()) {
-            String prescription = name + ": " + description;
+            String prescription = "Paciente: " + name + " (CPF: " + cpf + ", Nasc: " + borndate + ", Plano: " + healthinsurance + ")\n" +
+                    "Médico: " + doctorname + " (CRM: " + crm + ")\n" +
+                    "Medicamento: " + medicinename + " (Dosagem: " + dosage + ", Quantidade: " + amount + ", Admin: " + admin + ")\n" +
+                    "Descrição: " + description + "\n" +
+                    "Observações: " + obs;
             prescriptions.add(prescription);
         }
         processRequest(request, response);

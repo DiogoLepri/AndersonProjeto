@@ -1,9 +1,11 @@
+html{
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: "Bahnschrift", "Helvetica Neue", "Helvetica", sans, serif;
-    background-color: #ffffff; /* Consistent dark background color */
     display: flex;
     flex-direction: column; /* Stack children vertically */
     align-items: center;
@@ -16,7 +18,7 @@ body, html {
 
 .Titulo img {
     position: absolute;
-    top: -120px;  /* Move the image up by 20 pixels above the top edge */
+    top: -50px;  /* Move the image up by 20 pixels above the top edge */
     left: 50%;  /* Set left edge of image to the center of the container */
     transform: translateX(-50%);  /* Shift image back by half its own width to center it */
     width: 100%;
@@ -25,8 +27,8 @@ body, html {
 
 #SubTitulo {
     font-size: 18px;
-    color: #777; /* Even lighter for less emphasis */
-    margin-top: 1px; /* Keeps elements close together */
+    color: #fff; /* Even lighter for less emphasis */
+    margin-top: 2px; /* Keeps elements close together */
     text-align: center;
     font-family: "Bahnschrift", "Helvetica Neue", "Helvetica", sans, serif;
 }
@@ -56,10 +58,11 @@ body, html {
 .doctor {
     position: relative;
     height: 100%;
-    background-image: url(doctor1.jpg);
+    background-image: url(doctor2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .doctor::before {
@@ -77,7 +80,7 @@ body, html {
 }
 
 .doctor:hover::before {
-    background-color: rgba(34, 41, 81, 0.3); /* Lighter overlay on hover */
+    background-color: rgba(34, 41, 81, 0.0); /* Lighter overlay on hover */
     border-radius: 20px;
 }
 
@@ -90,15 +93,6 @@ body, html {
     color: white; /* Example color, adjust as necessary */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Optional: Enhances readability over backgrounds */
 }
-
-
-
-/* Specific styling for the patient section */
-.patient {
-    background-color: dimgray ;
-    height: 100%;
-}
-
 
 /* Headings sized for visibility */
 h1 {
@@ -119,6 +113,7 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
 }
 
@@ -136,7 +131,7 @@ p {
 }
 
 .patient:hover::before {
-    background-color: rgba(34, 41, 81, 0.3); /* Lighter overlay on hover */
+    background-color: rgba(34, 41, 81, 0.0); /* Lighter overlay on hover */
     border-radius:20px;
 }
 

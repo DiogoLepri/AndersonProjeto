@@ -18,13 +18,13 @@
     <div class="right">
         <div class="content-wrapper"> <!-- New wrapper for centering content -->
             <h2>Realize seu Cadastro</h2>
-            <form action="register" method="post">
-                <label for="crm" >CRM:</label>
+            <form action="registerPh" method="post">
+                <label for="crm" >CPF:</label>
                 <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
                 <label for="password" >Senha:</label>
                 <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                 <button type="submit">Criar conta</button>
-                <p>Ja tem uma conta? <a href="doctor-login.jsp">Log In</a></p>
+                <p>Ja tem uma conta? <a href="farmaceutico-login.jsp">Log In</a></p>
             </form>
         </div>
     </div>
