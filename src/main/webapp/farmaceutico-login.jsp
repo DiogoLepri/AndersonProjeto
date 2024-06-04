@@ -21,7 +21,7 @@
                 <h2>Faca Login</h2>
                 <form action="loginPh" method="post" class="login-form">
                     <div class="input-group">
-                        <label for="cpf">CPF:</label>
+                        <label for="cpf">Codigo Farmacia:</label>
                         <input type="text" id="cpf" name="cpf" placeholder="Digite seu cpf" required>
                     </div>
                     <div class="input-group">

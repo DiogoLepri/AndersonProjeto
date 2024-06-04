@@ -1,5 +1,6 @@
 html{
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+
+    background: linear-gradient(3deg, rgba(45,65,253,1) 0%, rgba(0,242,255,1) 100%);
 }
 body, html {
     height: 100%;
@@ -27,7 +28,7 @@ body, html {
 
 #SubTitulo {
     font-size: 18px;
-    color: #fff; /* Even lighter for less emphasis */
+    color: transparent; /* Even lighter for less emphasis */
     margin-top: 2px; /* Keeps elements close together */
     text-align: center;
     font-family: "Bahnschrift", "Helvetica Neue", "Helvetica", sans, serif;

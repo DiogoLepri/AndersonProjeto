@@ -19,7 +19,7 @@
         <div class="content-wrapper"> <!-- New wrapper for centering content -->
             <h2>Realize seu Cadastro</h2>
             <form action="registerPh" method="post">
-                <label for="crm" >CPF:</label>
+                <label for="crm" >Codigo Farmacia:</label>
                 <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
                 <label for="password" >Senha:</label>
                 <input type="password" id="password" name="password" placeholder="Digite sua senha" required>

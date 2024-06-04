@@ -13,7 +13,7 @@ body, html {
 
 .left {
     flex: 1.5;
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background: linear-gradient(3deg, rgba(45,65,253,1) 0%, rgba(0,242,255,1) 100%);
     color: white;
     padding: 2rem;
     text-align: center;
