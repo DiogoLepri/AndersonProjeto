@@ -13,7 +13,7 @@
     <div class="left">
         <nav id="home"><a href="index.jsp"><u>Home</u></a></nav>
         <h1>Bem-vindo</h1>
-        <img src="farmed_logo_nova.png">
+        <img src="farmed_logo_nova.png"/>
     </div>
     <div class="right">
         <div class="login-wrapper">
