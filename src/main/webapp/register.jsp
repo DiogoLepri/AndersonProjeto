@@ -6,7 +6,7 @@
     <title>Farmed</title>
     <link rel="stylesheet" type="text/css" href="Register.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png"  href="farmed_icone.png">
 </head>
 <body>
 <div class="split-screen">
