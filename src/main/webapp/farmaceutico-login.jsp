@@ -22,7 +22,7 @@
                 <form action="loginPh" method="post" class="login-form">
                     <div class="input-group">
                         <label for="cpf">Codigo Farmacia:</label>
-                        <input type="text" id="cpf" name="cpf" placeholder="Digite seu cpf" required>
+                        <input type="text" id="cpf" name="cpf" placeholder="Digite seu codigo de farmacia" required>
                     </div>
                     <div class="input-group">
                         <label for="password">Senha:</label>
@@ -30,7 +30,7 @@
                     </div>
                     <button type="submit" class="login-button">Login</button>
                     <% if ("true".equals(request.getParameter("error"))) { %>
-                    <p class="error-message" aria-live="polite">CPF ou senha invalida. Por favor tente novamente.</p>
+                    <p class="error-message" aria-live="polite">Codigo de farmacia ou senha invalida. Por favor tente novamente.</p>
                     <% } %>
                     <p class="signup-text">Nao tem uma conta? <a href="farmaceutico-register.jsp">Sign Up</a></p>
                 </form>

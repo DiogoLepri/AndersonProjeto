@@ -2,6 +2,7 @@ package com.example.andersonprojeto;
 
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -21,12 +22,15 @@ public class PharmacyServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         String user = (session != null) ? (String) session.getAttribute("user") : null;
+        String pharmacyCode = (session != null) ? (String) session.getAttribute("pharmacyCode") : null;
 
         if (user == null) {
             response.sendRedirect("farmaceutico-login.jsp");
         } else {
             synchronized (getServletContext()) {
-                List<String> prescriptions = (List<String>) getServletContext().getAttribute("prescriptions");
+                Map<String, List<String>> prescriptionMap = (Map<String, List<String>>) getServletContext().getAttribute("prescriptionMap");
+                List<String> prescriptions = prescriptionMap.get(pharmacyCode);
+                request.setAttribute("pharmacyCode", pharmacyCode);
                 request.setAttribute("prescriptions", prescriptions);
             }
             RequestDispatcher dispatcher = request.getRequestDispatcher("PrescriptionsFarma.jsp");

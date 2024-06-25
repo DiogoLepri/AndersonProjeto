@@ -12,8 +12,17 @@ public class LoginServlet extends HttpServlet {
         String crm = request.getParameter("crm");
         String password = request.getParameter("password");
 
-        // Debugging output
-        System.out.println("Attempting login with CRM: " + crm);
+        // Validação dos campos
+        if (crm == null || crm.isEmpty() || password == null || password.isEmpty()) {
+            response.sendRedirect("doctor-login.jsp?error=emptyFields");
+            return;
+        }
+
+        // Validação do formato do CRM
+        if (!crm.matches("\\d{6}")) {
+            response.sendRedirect("doctor-login.jsp?error=invalidCRM");
+            return;
+        }
 
         if (authenticateUser(crm, password)) {
             HttpSession session = request.getSession();
@@ -22,13 +31,11 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("prescriptions.jsp");
         } else {
             System.out.println("Login failed for CRM: " + crm);
-            response.sendRedirect("doctor-login.jsp?error=true");  // Redirecting with an error parameter
+            response.sendRedirect("doctor-login.jsp?error=invalidCredentials");
         }
     }
 
     private boolean authenticateUser(String crm, String password) {
-        // Implementation should validate the CRM and password against stored data
-        // This is just a placeholder for the authentication logic
         return UserStorage.getInstance().authenticateUser(crm, password);
     }
 }

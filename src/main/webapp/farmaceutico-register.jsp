@@ -20,7 +20,7 @@
             <h2>Realize seu Cadastro</h2>
             <form action="registerPh" method="post">
                 <label for="crm" >Codigo Farmacia:</label>
-                <input type="text" id="crm" name="crm" placeholder="Digite seu CRM" required>
+                <input type="text" id="crm" name="crm" placeholder="Digite seu codigo de farmacia" required>
                 <label for="password" >Senha:</label>
                 <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                 <button type="submit">Criar conta</button>

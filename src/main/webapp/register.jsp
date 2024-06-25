@@ -16,7 +16,7 @@
         <img src="farmed_logo_nova.png">
     </div>
     <div class="right">
-        <div class="content-wrapper"> <!-- New wrapper for centering content -->
+        <div class="content-wrapper">
             <h2>Realize seu Cadastro</h2>
             <form action="register" method="post">
                 <label for="crm" >CRM:</label>
@@ -24,6 +24,10 @@
                 <label for="password" >Senha:</label>
                 <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                 <button type="submit">Criar conta</button>
+                <% String errorMessage = (String) request.getAttribute("errorMessage");
+                    if (errorMessage != null) { %>
+                <p class="error-message"><%= errorMessage %></p>
+                <% } %>
                 <p>Ja tem uma conta? <a href="doctor-login.jsp">Log In</a></p>
             </form>
         </div>

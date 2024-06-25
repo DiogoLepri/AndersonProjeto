@@ -29,15 +29,21 @@
                         <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                     </div>
                     <button type="submit" class="login-button">Login</button>
-                    <% if ("true".equals(request.getParameter("error"))) { %>
-                    <p class="error-message" aria-live="polite">CRM ou senha invalida. Por favor tente novamente.</p>
-                    <% } %>
+                    <% String errorMessage = request.getParameter("error");
+                        if (errorMessage != null) {
+                            if (errorMessage.equals("emptyFields")) { %>
+                    <p class="error-message">Por favor, preencha todos os campos.</p>
+                    <% } else if (errorMessage.equals("invalidCRM")) { %>
+                    <p class="error-message">CRM invalido. O CRM deve conter entre 4 e 6 digitos.</p>
+                    <% } else if (errorMessage.equals("invalidCredentials")) { %>
+                    <p class="error-message">CRM ou senha invalida. Por favor, tente novamente.</p>
+                    <% }
+                    } %>
                     <p class="signup-text">Nao tem uma conta? <a href="register.jsp">Sign Up</a></p>
                 </form>
             </div>
         </div>
     </div>
-
 </div>
 </body>
 </html>
