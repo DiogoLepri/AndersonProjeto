@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmed</title>
-    <link rel="icon" type="image/png"  href="farmed_icone.png" >
+    <link rel="icon" type="image/png" href="farmed_icone.png">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="doctor-login.css">
 </head>
@@ -36,7 +36,7 @@
                     <% } else if (errorMessage.equals("invalidCRM")) { %>
                     <p class="error-message">CRM invalido. O CRM deve conter entre 4 e 6 digitos.</p>
                     <% } else if (errorMessage.equals("invalidCredentials")) { %>
-                    <p class="error-message">CRM ou senha invalida. Por favor, tente novamente.</p>
+                    <p class="error-message">CRM ou senha invalidos. Por favor, tente novamente.</p>
                     <% }
                     } %>
                     <p class="signup-text">Nao tem uma conta? <a href="register.jsp">Sign Up</a></p>

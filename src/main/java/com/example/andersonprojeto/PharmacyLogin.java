@@ -1,9 +1,16 @@
 package com.example.andersonprojeto;
 
-import java.io.*;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/loginPh")
 public class PharmacyLogin extends HttpServlet {
@@ -27,9 +34,17 @@ public class PharmacyLogin extends HttpServlet {
     }
 
     private boolean authenticateUser(String codigofarmacia, String password) {
-        // Implementation should validate the codigofarmacia and password against stored data
-        // This is just a placeholder for the authentication logic
-        return UserStorage.getInstance().authenticateUser(codigofarmacia, password);
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT * FROM pharmacies WHERE code = ? AND password = ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, codigofarmacia);
+                statement.setString(2, password);
+                ResultSet resultSet = statement.executeQuery();
+                return resultSet.next();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
-

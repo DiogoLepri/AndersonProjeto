@@ -1,25 +1,32 @@
 package com.example.andersonprojeto;
 
-import java.io.*;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/login")
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String crm = request.getParameter("crm");
         String password = request.getParameter("password");
 
-        // Validação dos campos
+        // Validate fields
         if (crm == null || crm.isEmpty() || password == null || password.isEmpty()) {
             response.sendRedirect("doctor-login.jsp?error=emptyFields");
             return;
         }
 
-        // Validação do formato do CRM
-        if (!crm.matches("\\d{6}")) {
+        // Validate CRM format
+        if (!crm.matches("\\d{4,6}")) {
             response.sendRedirect("doctor-login.jsp?error=invalidCRM");
             return;
         }
@@ -36,6 +43,17 @@ public class LoginServlet extends HttpServlet {
     }
 
     private boolean authenticateUser(String crm, String password) {
-        return UserStorage.getInstance().authenticateUser(crm, password);
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT * FROM doctors WHERE crm = ? AND password = ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, crm);
+                statement.setString(2, password);
+                ResultSet resultSet = statement.executeQuery();
+                return resultSet.next();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

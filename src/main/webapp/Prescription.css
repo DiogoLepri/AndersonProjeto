@@ -72,3 +72,26 @@ p {
     text-align: center;
     color: #666;
 }
+button[type="submit"], .pharmacy-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    width: calc(50% - 10px);
+}
+
+button[type="submit"]:hover, .pharmacy-button:hover {
+    background-color: #45a049;
+}
+
+.pharmacy-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
