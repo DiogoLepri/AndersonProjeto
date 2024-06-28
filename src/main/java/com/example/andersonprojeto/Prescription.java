@@ -1,33 +1,37 @@
 package com.example.andersonprojeto;
 
-
 import java.sql.Timestamp;
 
-
 public class Prescription {
-    private int id;
-    private String doctorName;
-    private String crm;
     private String patientName;
-    private String cpf;
-    private String bornDate;
-    private String healthInsurance;
-    private String description;
+    private String doctorName;
     private String medicineName;
+    private String description;
     private String dosage;
     private int amount;
     private String admin;
     private String obs;
-    private int pharmacyId;
     private Timestamp createdAt;
 
-    // Getters and Setters
-    public int getId() {
-        return id;
+    public Prescription(String patientName, String doctorName, String medicineName, String description, String dosage, int amount, String admin, String obs, Timestamp createdAt) {
+        this.patientName = patientName;
+        this.doctorName = doctorName;
+        this.medicineName = medicineName;
+        this.description = description;
+        this.dosage = dosage;
+        this.amount = amount;
+        this.admin = admin;
+        this.obs = obs;
+        this.createdAt = createdAt;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    // Getters and setters for each field
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
     }
 
     public String getDoctorName() {
@@ -38,44 +42,12 @@ public class Prescription {
         this.doctorName = doctorName;
     }
 
-    public String getCrm() {
-        return crm;
+    public String getMedicineName() {
+        return medicineName;
     }
 
-    public void setCrm(String crm) {
-        this.crm = crm;
-    }
-
-    public String getPatientName() {
-        return patientName;
-    }
-
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getBornDate() {
-        return bornDate;
-    }
-
-    public void setBornDate(String bornDate) {
-        this.bornDate = bornDate;
-    }
-
-    public String getHealthInsurance() {
-        return healthInsurance;
-    }
-
-    public void setHealthInsurance(String healthInsurance) {
-        this.healthInsurance = healthInsurance;
+    public void setMedicineName(String medicineName) {
+        this.medicineName = medicineName;
     }
 
     public String getDescription() {
@@ -84,14 +56,6 @@ public class Prescription {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getMedicineName() {
-        return medicineName;
-    }
-
-    public void setMedicineName(String medicineName) {
-        this.medicineName = medicineName;
     }
 
     public String getDosage() {
@@ -124,14 +88,6 @@ public class Prescription {
 
     public void setObs(String obs) {
         this.obs = obs;
-    }
-
-    public int getPharmacyId() {
-        return pharmacyId;
-    }
-
-    public void setPharmacyId(int pharmacyId) {
-        this.pharmacyId = pharmacyId;
     }
 
     public Timestamp getCreatedAt() {

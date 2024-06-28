@@ -26,7 +26,7 @@ public class PharmacyLogin extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", codigofarmacia);
             System.out.println("Login bem sucedido para o codigofarmacia: " + codigofarmacia);
-            response.sendRedirect("PrescriptionsFarma.jsp");
+            response.sendRedirect("PrescriptionsFarma.jsp?pharmacyId=" + codigofarmacia);
         } else {
             System.out.println("Login falhou: " + codigofarmacia);
             response.sendRedirect("farmaceutico-login.jsp?error=true");  // Redirecting with an error parameter

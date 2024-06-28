@@ -15,41 +15,43 @@
         out.println("<p style='color: red;'>" + error + "</p>");
     }
 %>
-<form id="prescriptionForm" action="prescriptions" method="post">
+<nav id="home"><a href="index.jsp"><u>Home</u></a></nav>
+<form action="prescriptions" method="post">
     <h2>Dados do Paciente:</h2>
     <label for="name">Nome do Paciente:</label>
-    <input type="text" id="name" name="name" value="<%= request.getParameter("name") != null ? request.getParameter("name") : "" %>" placeholder="Digite o nome completo do paciente"><br>
+    <input type="text" id="name" name="name" value="<%= request.getAttribute("name") != null ? request.getAttribute("name") : "" %>" placeholder="Digite o nome completo do paciente"><br>
     <label for="cpf">CPF:</label>
-    <input type="text" id="cpf" name="cpf" value="<%= request.getParameter("cpf") != null ? request.getParameter("cpf") : "" %>" placeholder="Digite o CPF (somente números)"><br>
+    <input type="text" id="cpf" name="cpf" value="<%= request.getAttribute("cpf") != null ? request.getAttribute("cpf") : "" %>" placeholder="Digite o CPF (somente números)"><br>
     <label for="borndate">Data de nascimento:</label>
-    <input type="text" id="borndate" name="borndate" value="<%= request.getParameter("borndate") != null ? request.getParameter("borndate") : "" %>" placeholder="Digite a data de nascimento (dd/mm/aaaa)"><br>
+    <input type="text" id="borndate" name="borndate" value="<%= request.getAttribute("borndate") != null ? request.getAttribute("borndate") : "" %>" placeholder="Digite a data de nascimento (dd/mm/aaaa)"><br>
     <label for="healthinsurance">Plano de saude:</label>
-    <input type="text" id="healthinsurance" name="healthinsurance" value="<%= request.getParameter("healthinsurance") != null ? request.getParameter("healthinsurance") : "" %>" placeholder="Digite o nome do plano de saúde"><br><br>
+    <input type="text" id="healthinsurance" name="healthinsurance" value="<%= request.getAttribute("healthinsurance") != null ? request.getAttribute("healthinsurance") : "" %>" placeholder="Digite o nome do plano de saúde"><br><br>
 
     <h2>Medico Responsavel:</h2>
     <label for="doctorname">Nome do Medico:</label>
-    <input type="text" id="doctorname" name="doctorname" value="<%= request.getParameter("doctorname") != null ? request.getParameter("doctorname") : "" %>" placeholder="Digite o nome completo do médico"><br>
+    <input type="text" id="doctorname" name="doctorname" value="<%= request.getAttribute("doctorname") != null ? request.getAttribute("doctorname") : "" %>" placeholder="Digite o nome completo do médico"><br>
     <label for="CRM">CRM:</label>
-    <input type="text" id="CRM" name="CRM" value="<%= request.getParameter("CRM") != null ? request.getParameter("CRM") : "" %>" placeholder="Digite o CRM (4 a 6 dígitos)"><br><br>
+    <input type="text" id="CRM" name="CRM" value="<%= request.getAttribute("CRM") != null ? request.getAttribute("CRM") : "" %>" placeholder="Digite o CRM (4 a 6 dígitos)"><br><br>
 
     <h3>Descricao:</h3>
     <label for="description">Descricao:</label>
-    <input type="text" id="description" name="description" value="<%= request.getParameter("description") != null ? request.getParameter("description") : "" %>" placeholder="Digite a descrição da prescrição"><br>
+    <input type="text" id="description" name="description" value="<%= request.getAttribute("description") != null ? request.getAttribute("description") : "" %>" placeholder="Digite a descrição da prescrição"><br>
     <label for="medicinename">Nome do Medicamento:</label>
-    <input type="text" id="medicinename" name="medicinename" value="<%= request.getParameter("medicinename") != null ? request.getParameter("medicinename") : "" %>" placeholder="Digite o nome do medicamento"><br>
+    <input type="text" id="medicinename" name="medicinename" value="<%= request.getAttribute("medicinename") != null ? request.getAttribute("medicinename") : "" %>" placeholder="Digite o nome do medicamento"><br>
     <label for="dosage">Dosagem:</label>
-    <input type="text" id="dosage" name="dosage" value="<%= request.getParameter("dosage") != null ? request.getParameter("dosage") : "" %>" placeholder="Digite a dosagem do medicamento"><br>
+    <input type="text" id="dosage" name="dosage" value="<%= request.getAttribute("dosage") != null ? request.getAttribute("dosage") : "" %>" placeholder="Digite a dosagem do medicamento"><br>
     <label for="amount">Quantidade:</label>
-    <input type="text" id="amount" name="amount" value="<%= request.getParameter("amount") != null ? request.getParameter("amount") : "" %>" placeholder="Digite a quantidade (número inteiro)"><br>
+    <input type="text" id="amount" name="amount" value="<%= request.getAttribute("amount") != null ? request.getAttribute("amount") : "" %>" placeholder="Digite a quantidade (número inteiro)"><br>
     <label for="Admin">Via de administracao:</label>
-    <input type="text" id="Admin" name="Admin" value="<%= request.getParameter("Admin") != null ? request.getParameter("Admin") : "" %>" placeholder="Digite a via de administração"><br>
+    <input type="text" id="Admin" name="Admin" value="<%= request.getAttribute("Admin") != null ? request.getAttribute("Admin") : "" %>" placeholder="Digite a via de administração"><br>
     <label for="obs">Observacoes:</label>
-    <input type="text" id="obs" name="obs" value="<%= request.getParameter("obs") != null ? request.getParameter("obs") : "" %>" placeholder="Digite as observações (opcional)"><br><br>
+    <input type="text" id="obs" name="obs" value="<%= request.getAttribute("obs") != null ? request.getAttribute("obs") : "" %>" placeholder="Digite as observações (opcional)"><br><br>
 
-    <input type="hidden" id="pharmacyId" name="pharmacyId" value="<%= request.getParameter("pharmacyId") != null ? request.getParameter("pharmacyId") : "" %>">
-
-    <button type="button" onclick="submitForm(1190)">Enviar para Farmácia 1</button>
-    <button type="button" onclick="submitForm(2231)">Enviar para Farmácia 2</button>
+    <!-- Add buttons to select the pharmacy and hidden field to store pharmacy ID -->
+    <input type="hidden" id="pharmacyId" name="pharmacyId">
+    <button type="button" onclick="setPharmacyId(1190)">Farmácia 1</button>
+    <button type="button" onclick="setPharmacyId(2231)">Farmácia 2</button>
+    <button type="submit">Enviar Prescrição</button>
 </form>
 
 <%
@@ -70,9 +72,8 @@
 %>
 
 <script>
-    function submitForm(pharmacyId) {
-        document.getElementById('pharmacyId').value = pharmacyId;
-        document.getElementById('prescriptionForm').submit();
+    function setPharmacyId(id) {
+        document.getElementById('pharmacyId').value = id;
     }
 </script>
 </body>

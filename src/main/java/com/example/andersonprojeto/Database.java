@@ -33,13 +33,6 @@ public class Database {
                     "password VARCHAR(255) NOT NULL" +
                     ")");
 
-            // Create pharmacies table
-            statement.execute("CREATE TABLE IF NOT EXISTS pharmacies (" +
-                    "id INT AUTO_INCREMENT PRIMARY KEY," +
-                    "code VARCHAR(10) NOT NULL UNIQUE," +
-                    "password VARCHAR(255) NOT NULL" +
-                    ")");
-
             // Create prescriptions table
             statement.execute("CREATE TABLE IF NOT EXISTS prescriptions (" +
                     "id INT AUTO_INCREMENT PRIMARY KEY," +
@@ -47,7 +40,7 @@ public class Database {
                     "crm VARCHAR(10) NOT NULL," +
                     "patient_name VARCHAR(255) NOT NULL," +
                     "cpf VARCHAR(11) NOT NULL," +
-                    "born_date VARCHAR(11) NOT NULL," +
+                    "born_date DATE NOT NULL," +
                     "health_insurance VARCHAR(255) NOT NULL," +
                     "description TEXT NOT NULL," +
                     "medicine_name VARCHAR(255) NOT NULL," +

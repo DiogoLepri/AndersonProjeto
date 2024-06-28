@@ -12,6 +12,7 @@
 </head>
 <body>
 <header>
+    <nav id="home"><a href="index.jsp"><u>Home</u></a></nav>
     <h1>Acesso a prescrição de farmacêutico</h1>
 </header>
 <main>
